@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>pl.jdomanski</groupId>
-		<artifactId>pet-clininc</artifactId>
+		<artifactId>pet-clinic</artifactId>
 		<version>0.0.1</version>
 	</parent>
 	<artifactId>pet-clinic-web</artifactId>
