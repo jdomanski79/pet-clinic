@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pl.jdomanski</groupId>
-	<artifactId>pet-clininc</artifactId>
+	<artifactId>pet-clinic</artifactId>
 	<version>0.0.1</version>
-	<name>pet-clininc</name>
+	<name>pet-clinic</name>
 	<description>Spring Boot Pet Clinic Guru edition</description>
 	<packaging>pom</packaging>
 
@@ -43,8 +43,8 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:https://github.com/jdomanski79/pet-clinc</developerConnection>
-		<tag>pet-clininc-0.0.1</tag>
+		<developerConnection>scm:git:https://github.com/jdomanski79/pet-clinic</developerConnection>
+		<tag>pet-clinic-0.0.1</tag>
 	</scm>
 	<modules>
 		<module>pet-clinic-data</module>
