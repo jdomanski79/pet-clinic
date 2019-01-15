@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>pl.jdomanski</groupId>
 	<artifactId>pet-clininc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>pet-clininc</name>
 	<description>Spring Boot Pet Clinic Guru edition</description>
 	<packaging>pom</packaging>
@@ -35,12 +35,16 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.5.3</version>
+				<configuration>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/jdomanski79/pet-clinc</developerConnection>
+		<tag>pet-clininc-0.0.1</tag>
 	</scm>
 	<modules>
 		<module>pet-clinic-data</module>
