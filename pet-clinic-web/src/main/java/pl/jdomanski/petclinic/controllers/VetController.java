@@ -1,13 +1,27 @@
 package pl.jdomanski.petclinic.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import pl.jdomanski.petclinic.services.VetService;
 
 @Controller
 public class VetController {
 
+	private VetService vetService;
+	
+	
+	public VetController(VetService vetService) {
+		this.vetService = vetService;
+	}
+
+
 	@RequestMapping({"/vets", "vets/index.html"})
-	public String listVets() {
+	public String listVets(Model model) {
+		
+		model.addAttribute("vets", vetService.findAll());
+		
 		return "vets/index";
 	}
 }

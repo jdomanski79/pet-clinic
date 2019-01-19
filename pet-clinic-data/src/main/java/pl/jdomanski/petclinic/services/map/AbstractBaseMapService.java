@@ -11,12 +11,14 @@ public abstract class AbstractBaseMapService<T extends BaseEntity, ID> {
 	
 	protected Map<Long, T> map = new HashMap<>();
 	
-	public T save(ID id, T object) {
+	public T save(T object) {
 		
 		if(object != null) {
-			if(object.getId() != null) {
+			if(object.getId() == null) {
 				object.setId(getNextId());
 			}
+		} else {
+			throw new NullPointerException("Object not found!");
 		}
 		
 		map.put(object.getId(), object);
@@ -37,6 +39,8 @@ public abstract class AbstractBaseMapService<T extends BaseEntity, ID> {
 	}
 	
 	private Long getNextId() {
-		return (long) (map.size() + 1);
+		Long nextId = (long) (map.size() + 1);
+		
+		return nextId; 
 	}
 }

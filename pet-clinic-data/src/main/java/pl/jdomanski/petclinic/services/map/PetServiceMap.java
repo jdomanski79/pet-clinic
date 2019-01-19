@@ -9,9 +9,4 @@ import pl.jdomanski.petclinic.services.PetService;
 @Service
 public class PetServiceMap extends AbstractBaseMapService<Pet, Long> implements PetService{
 
-	@Override
-	public Pet save(Pet object) {
-		return super.save(object.getId(), object);
-	}
-
 }

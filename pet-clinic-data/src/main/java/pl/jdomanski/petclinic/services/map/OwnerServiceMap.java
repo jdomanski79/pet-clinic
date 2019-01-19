@@ -11,11 +11,6 @@ import pl.jdomanski.petclinic.services.OwnerService;
 public class OwnerServiceMap extends AbstractBaseMapService<Owner, Long> implements OwnerService{
 
 	@Override
-	public Owner save(Owner object) {
-		return super.save(object.getId(), object);
-	}
-
-	@Override
 	public Owner findByLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return null;
