@@ -7,5 +7,17 @@
 <body>
 
 	<h1 th:text="'Owners index page'">Index Page!</h1>
+	<table>
+		<tr>
+			<td>Id</td>
+			<td>FirstName</td>
+			<td>LastName</td>
+		</tr>
+		<tr th:each="owner : ${owners}">
+			<td th:text="${owner.id}">Id</td>
+			<td th:text="${owner.firstName}">First name</td>
+			<td th:text="${owner.lastName}">Last name</td>
+		</tr>
+	</table>
 </body>
 </html>
