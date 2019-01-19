@@ -5,12 +5,21 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class AbstractBaseMapService<T, ID> {
+import pl.jdomanski.petclinic.model.BaseEntity;
+
+public abstract class AbstractBaseMapService<T extends BaseEntity, ID> {
 	
-	protected Map<ID, T> map = new HashMap<>();
+	protected Map<Long, T> map = new HashMap<>();
 	
 	public T save(ID id, T object) {
-		map.put(id, object);
+		
+		if(object != null) {
+			if(object.getId() != null) {
+				object.setId(getNextId());
+			}
+		}
+		
+		map.put(object.getId(), object);
 		
 		return object;
 	}
@@ -25,5 +34,9 @@ public abstract class AbstractBaseMapService<T, ID> {
 	
 	public void delete (T object) {
 		map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+	}
+	
+	private Long getNextId() {
+		return (long) (map.size() + 1);
 	}
 }
