@@ -1,23 +1,28 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.thymeleaf.org">
+<html lang="pl" xmlns="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
 <head>
 <meta charset="UTF-8">
 <title>Owners index page</title>
 </head>
 <body>
 
-	<h1 th:text="'Owners index page'">Index Page!</h1>
-	<table>
-		<tr>
-			<td>Id</td>
-			<td>FirstName</td>
-			<td>LastName</td>
-		</tr>
-		<tr th:each="owner : ${owners}">
-			<td th:text="${owner.id}">Id</td>
-			<td th:text="${owner.firstName}">First name</td>
-			<td th:text="${owner.lastName}">Last name</td>
-		</tr>
+	<h2 th:text="'Owners index page'">Index Page!</h2>
+	<table id="vets" class="table table-striped">
+		<thead>
+			<tr>
+				<td style="width: 15px;">Id</td>
+				<td style="width: 150px;">FirstName</td>
+				<td style="width: 150px;">LastName</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="owner : ${owners}">
+				<td th:text="${owner.id}">Id</td>
+				<td th:text="${owner.firstName}">First name</td>
+				<td th:text="${owner.lastName}">Last name</td>
+			</tr>
+		</tbody>
 	</table>
 </body>
 </html>
