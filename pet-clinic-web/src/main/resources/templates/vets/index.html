@@ -1,24 +1,29 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns="http://www.thymeleaf.org">
+<html lang="pl" xmlns="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'vets')}">
 <head>
 <meta charset="UTF-8">
 <title>Vets index page</title>
 </head>
 <body>
 
-	<h1 th:text="'Vets index page'">Index Page!</h1>
+	<h2 th:text="'Vets index page'">Index Page!</h2>
 
-	<table>
-		<tr>
-			<td>Id</td>
-			<td>FirstName</td>
-			<td>LastName</td>
-		</tr>
-		<tr th:each="vet : ${vets}">
-			<td th:text="${vet.id}">Id</td>
-			<td th:text="${vet.firstName}">First name</td>
-			<td th:text="${vet.lastName}">Last name</td>
-		</tr>
+	<table id="vets" class="table table-striped">
+		<thead>
+			<tr>
+				<td>Id</td>
+				<td>FirstName</td>
+				<td>LastName</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="vet : ${vets}">
+				<td th:text="${vet.id}">Id</td>
+				<td th:text="${vet.firstName}">First name</td>
+				<td th:text="${vet.lastName}">Last name</td>
+			</tr>
+		</tbody>
 	</table>
 </body>
 </html>
